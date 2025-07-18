@@ -1,0 +1,103 @@
+
+    body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f0f8ff;
+  color: #333;
+}
+
+header {
+  background: #0077b6;
+  color: white;
+  padding: 1em;
+  text-align: center;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  margin: 0.5em 1em;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+section {
+  padding: 2em;
+  background: #fff;
+  margin: 1em;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #0077b6;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1em;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 10px;
+  height: 150px;
+  object-fit: cover;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+select,
+input[type='submit'] {
+  padding: 0.5em;
+  font-size: 1em;
+}
+
+.review-slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 1em;
+}
+
+.review-card {
+  flex: 0 0 auto;
+  background: #e0f7fa;
+  padding: 1em;
+  border-radius: 10px;
+  min-width: 200px;
+}
+
+footer {
+  text-align: center;
+  padding: 1em;
+  background: #0077b6;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+#visitorChart {
+  max-width: 100%;
+  height: 300px;
+}

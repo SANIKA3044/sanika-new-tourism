@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Explore Goa</title>
+  <link rel="stylesheet" href="css6.css" />
+  
+</head>
+<body>
+  <header>
+    <h1>Welcome to Goa Tourism</h1>
+    <nav>
+      <ul>
+        <li><a href="#attractions">Top Attractions</a></li>
+        <li><a href="#guides">Travel Guides</a></li>
+        <li><a href="#stats">Statistics</a></li>
+        <li><a href="#planner">Itinerary Planner</a></li>
+        <li><a href="#gallery">Photo Gallery</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="attractions">
+    <h2>Top Attractions</h2>
+    <p>Explore famous beaches, forts, churches, and nature spots across Goa.</p>
+  </section>
+
+  <section id="guides">
+    <h2>Travel Guides</h2>
+    <p>Discover local food, shopping places, cultural events, and festivals.</p>
+  </section>
+
+   <section id="stats">
+    <h2>Tourist Footfall Statistics</h2>
+    <div class="chart-container">
+      <canvas id="visitorChart" width="400" height="200"></canvas>
+    </div>
+  </section>
+
+  <section id="transport">
+    <h2>Stay & Transport Info</h2>
+    <p>Find hotels, Airbnb stays, and local transport guidance.</p>
+  </section>
+
+  <section id="eco">
+    <h2>Sustainability & Eco-Tourism</h2>
+    <p>Support green travel in Goa with eco-friendly tips and listings.</p>
+  </section>
+
+  <section id="planner">
+    <h2>Itinerary Planner</h2>
+    <form id="tripForm">
+      <label>Choose Duration:</label>
+      <select id="tripDays">
+        <option value="3">3-Day Trip</option>
+        <option value="5">5-Day Trip</option>
+      </select>
+      <input type="submit" value="Plan Now" />
+    </form>
+    <div id="itineraryOutput"></div>
+  </section>
+
+  <section id="gallery">
+    <h2>Photo Gallery</h2>
+    <div class="gallery">
+      <img src="beachassig6.avif" alt="Beach" />
+      <img src="goafort6.jpg" alt="Fort" />
+      <img src="goamarket6.jpg" alt="Market" />
+    </div>
+  </section>
+
+  <section id="reviews">
+    <h2>User Reviews</h2>
+    <div class="review-slider">
+      <div class="review-card">Amazing place! - Priya</div>
+      <div class="review-card">Loved the beaches! - Aman</div>
+      <div class="review-card">Cultural bliss - Fatima</div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Explore Goa. All rights reserved.</p>
+  </footer></body></html>
+  <script>
+
+  // Chart.js for visitor data
+const ctx = document.getElementById('visitorChart').getContext('2d');
+new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+    datasets: [{
+      label: 'Visitors (in thousands)',
+      data: [40, 45, 50, 35, 60, 70],
+      backgroundColor: 'rgba(54, 162, 235, 0.6)',
+    }]
+  },
+  options: {
+    responsive: true,
+    scales: {
+      y: { beginAtZero: true }
+    }
+  }
+});
+
+// Simple Itinerary Planner
+document.getElementById('tripForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const days = document.getElementById('tripDays').value;
+  const output = document.getElementById('itineraryOutput');
+
+  const plans = {
+    3: ['Day 1: Beaches', 'Day 2: Forts & Markets', 'Day 3: Churches & Culture'],
+    5: ['Day 1: Beaches', 'Day 2: Forts', 'Day 3: Local Food Tour', 'Day 4: Wildlife & Nature', 'Day 5: Culture & Shopping']
+  };
+
+  output.innerHTML = `<h3>Your ${days}-Day Itinerary:</h3><ul>` +
+    plans[days].map(day => `<li>${day}</li>`).join('') + '</ul>';
+});</script>
